@@ -1,3 +1,4 @@
+
 "use strict"
 
 const iconMenu = document.querySelector('.menu__icon');
