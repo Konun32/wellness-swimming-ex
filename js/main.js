@@ -10,3 +10,13 @@ if (iconMenu) {
 		menuBody.classList.toggle('_active');
 	})
 }
+
+$(document).ready(function(){
+	$('.slider').slick({
+		arrows: false,
+		dots: true,
+		centerMode: true,
+		slidesToShow: 1,
+		variableWidth: true
+	});
+});
