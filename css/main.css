@@ -992,9 +992,17 @@ h1, h2, h3, h4, h5, h6 {
   grid-row: 1/3;
   background: #fff;
   border-radius: 10px;
+  position: relative;
 }
 .contacts__map img {
   border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .contact {
@@ -1051,6 +1059,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #018ABE;
   background: #FFFFFF;
   border-radius: 3px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.contact__btn:hover {
+  font-size: 15px;
+  border: 1px solid #006085;
+  padding: 8px 12px;
 }
 
 @media (max-width: 1330px) {
