@@ -469,6 +469,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sessions {
   color: #fff;
+  /*&__card {
+  	transform: translate(0px, 120%);
+  	opacity: 0;
+  	transition: all 0.8s ease 0s;
+  	&._active {
+  		transform: translate(0px, 0px);
+  		opacity: 1;
+  	}
+  }*/
 }
 .sessions__cardes {
   margin-top: 100px;
@@ -522,6 +531,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   -webkit-transform-origin: center center;
           transform-origin: center center;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0.2s;
+  transition: all 0.8s ease 0.2s;
 }
 .card:hover {
   -webkit-animation: animate 0.5s linear 1;
@@ -550,6 +564,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   border-radius: 20px;
+}
+
+._active > .card {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 @-webkit-keyframes animate {
@@ -771,10 +791,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 .service:nth-child(even) .service__text-block {
   margin: 0 0 0 20px;
+  -webkit-transform: translate(120%, 0);
+          transform: translate(120%, 0);
+}
+.service:nth-child(even) .service__img {
+  -webkit-transform: translate(-120%, 0);
+          transform: translate(-120%, 0);
 }
 .service__text-block {
   max-width: 466px;
   margin: 0 20px 0 0;
+  -webkit-transform: translate(-120%, 0);
+          transform: translate(-120%, 0);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0.1s;
+  transition: all 0.8s ease 0.1s;
 }
 .service__title {
   font-family: "Proxima Nova";
@@ -796,6 +827,11 @@ h1, h2, h3, h4, h5, h6 {
 .service__img {
   width: 48.88%;
   position: relative;
+  -webkit-transform: translate(120%, 0);
+          transform: translate(120%, 0);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0.1s;
+  transition: all 0.8s ease 0.1s;
 }
 .service__img img {
   position: relative;
@@ -806,6 +842,20 @@ h1, h2, h3, h4, h5, h6 {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 11px;
+}
+
+._active > .service__text-block, ._active > .service__img {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+._active:nth-child(even) > .service__text-block {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+._active:nth-child(even) > .service__img {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 @media (max-width: 895px) {
@@ -877,9 +927,27 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  color: inherit;
+  -webkit-transform: translate(-120%, 0);
+          transform: translate(-120%, 0);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 .price__service:not(:last-child) {
   margin-bottom: 31px;
+}
+.price__service:last-child {
+  margin-bottom: 1px;
+}
+.price__service:hover {
+  border-bottom: 1px solid #fff;
+}
+.price__service:hover:not(:last-child) {
+  margin-bottom: 30px;
+}
+.price__service:hover:last-child {
+  margin-bottom: 0;
 }
 .price__service-text {
   font-family: "Proxima Nova";
@@ -914,6 +982,8 @@ h1, h2, h3, h4, h5, h6 {
 .price__img {
   position: relative;
   max-width: 526px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 .price__img:not(:last-child) {
   margin: 0 0 30px 0;
@@ -935,6 +1005,51 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 21px;
   line-height: 140%;
   text-align: center;
+  -webkit-transform: translate(0, 50%);
+          transform: translate(0, 50%);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.price__left._active .price__service {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+.price__left._active .price__service:nth-child(1) {
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.price__left._active .price__service:nth-child(2) {
+  -webkit-transition: all 0.8s ease 0.4s;
+  transition: all 0.8s ease 0.4s;
+}
+.price__left._active .price__service:nth-child(3) {
+  -webkit-transition: all 0.8s ease 0.6s;
+  transition: all 0.8s ease 0.6s;
+}
+.price__left._active .price__service:nth-child(4) {
+  -webkit-transition: all 0.8s ease 0.8s;
+  transition: all 0.8s ease 0.8s;
+}
+.price__left._active .price__service:nth-child(5) {
+  -webkit-transition: all 0.8s ease 1s;
+  transition: all 0.8s ease 1s;
+}
+
+.price__right._active .price__img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.price__right._active .price__img-caption {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+  -webkit-transition: all 0.8s ease 0.6s;
+  transition: all 0.8s ease 0.6s;
 }
 
 @media (max-width: 960px) {
